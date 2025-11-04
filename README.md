@@ -1,9 +1,8 @@
 ### Hi there 👋
-my name is Martin, I am a problem solver that loves to learn and understand as many things as i can
-- ⚡ I currently know Unity C#, java and will be learning C and C++ soon.
-- 🔭 I’m currently working on a mechanics showroom on unity to show off different game mechanics
-- 🌱 I’m currently learning embedded programming for robotics/ mechatronics
-- 👯 I’m looking to collaborate on game development or robotics/mechatronics
+my name is Martin, I am a Software Developer specializing in integrations and middleware development
+- ⚡ I currently know C, C#, java, Apex, Dataweave, Bash
+- 🔭 I’m currently working on a building a development workspace on an ARM chip with a stripped down Linux OS
+- 🌱 I want to learn embedded programming for robotics/mechatronics for fun
 - 📫 How to reach me:
 -   Email: martin.nguyen.work@hotmail.com
 -   Linkedin: https://www.linkedin.com/in/martinnguyendev/
