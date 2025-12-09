@@ -1,0 +1,40 @@
+{
+    "summary":"My name is Martin. I’m a software developer specializing in integrations and middleware development.",
+    "professionalExperience":
+        {
+            "technicalLanguages":
+                {
+                    "programming":["C","C#","Java","Apex","DataWeave"],
+                    "scripting":["Bash","Batch"],
+                    "query":["SQL","SOQL"],
+                    "web":["JavaScript","CSS","HTML"]
+                },
+            "platforms":["MuleSoft","Salesforce","Heroku"],
+            "frameworks":[".NET","Lightning Web Components (LWC)"],
+            "apis":
+                {
+                    "style":["REST"],
+                    "specifications":["OpenAPI 3.0 (OAS3)","RAML"],
+                    "schemas":["JSON Schema"]
+                },
+            "environments":["Windows","Linux"],
+            "toolingWorkflows":["Git","GitHub","GitHub Actions (CI/CD)"],
+            "databases":["PostgreSQL (Heroku Postgres)"],
+            "cloudAndHosting":["Heroku"],
+            "testing":["Apex tests"]
+        },
+    "contactMe":
+        {
+            "linkedin":"martinnguyendev",
+            "email":"martin.nguyen.work@hotmail.com",
+            "github":"martin-n-dev"
+        },
+    "aboutMe":"I enjoy making systems talk to each other without falling apart, I also design REST APIs, writing specs (OAS3, RAML) and create JSON schemas. This lets me wire APIs, existing platforms, and legacy systems into something predictable and maintainable. I analyze and work with the constraints of a platform or system, tightening up edge cases, and using automation (GitHub Actions, CI/CD) so deployments are more robust. \n\nOutside of work, I pull things apart to see how they actually work and right now that means experimenting with Linux, stripping down distros to the bare minimum and working up. Eventually I want to work more with embedded programming as I enjoy the physical side of coding; electronics, robotics, etc.",
+    "compatibleRoles":[
+        "Software Engineer",
+        "Software Developer",
+        "Systems Integrator",
+        "Salesforce Developer",
+        "MuleSoft Developer"
+    ]
+}
