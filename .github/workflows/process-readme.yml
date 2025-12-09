@@ -1,0 +1,97 @@
+name: Generate README.md
+
+on:
+    workflow_dispatch:
+
+jobs:
+    build-readme:
+        runs-on: ubuntu-latest
+
+        permissions: 
+            contents: write
+
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+
+            - name: Generate README.md from template
+              uses: |
+                set -euo pipefail
+                
+                summary=$(jq -r '.summary' data.json)
+
+                languagesLine=$(jq -r '
+                    .professionalExperience.technicalLanguages
+                    | [.programming[], .scripting[], .query[], .web[]]
+                    | join(", ")
+                ' data.json)
+
+                platformsLine=$(jq -r '
+                    .professionalExperience.platforms
+                    | join(", ")
+                ' data.json)
+
+                frameworksLine=$(jq -r '
+                    .professionalExperience.frameworks
+                    | join(", ")
+                ' data.json)
+
+                apisLine=$(jq -r '
+                    .professionalExperience.apis
+                    | [
+                        (.style | select(length > 0) | join(", ")),
+                        (.specifications | select(length > 0) | join(", ")),
+                        (.schemas | select(length > 0) | join(", "))
+                    ]
+                    | map(select(length > 0))
+                    | join("; ")
+                ' data.json)
+
+                envLine=$(jq -r '
+                    .professionalExperience.environments
+                    | join(", ")
+                ' data.json)
+
+                toolingLine=$(jq -r '
+                    .professionalExperience.toolingWorkflows
+                    | join(", ")
+                ' data.json)
+
+                databasesLine=$(jq -r '
+                    .professionalExperience.databases
+                    | join(", ")
+                ' data.json)
+
+                cloudLine=$(jq -r '
+                    .professionalExperience.cloudAndHosting
+                    | join(", ")
+                ' data.json)
+
+                testingLine=$(jq -r '
+                    .professionalExperience.testing
+                    | join(", ")
+                ' data.json)
+
+                linkedin=$(jq -r '.contactMe.linkedin' data.json)
+                email=$(jq -r '.contactMe.email' data.json)
+                aboutMeLine=$(jq -r '.aboutMe' data.json)
+
+                template="$(cat template.md)"
+
+                template="${template//'{{summary}}'/$summary}"
+                template="${template//'{{languagesLine}}'/$languagesLine}"
+                template="${template//'{{platformsLine}}'/$platformsLine}"
+                template="${template//'{{frameworksLine}}'/$frameworksLine}"
+                template="${template//'{{apisLine}}'/$apisLine}"
+                template="${template//'{{envLine}}'/$envLine}"
+                template="${template//'{{toolingLine}}'/$toolingLine}"
+                template="${template//'{{databasesLine}}'/$databasesLine}"
+                template="${template//'{{cloudLine}}'/$cloudLine}"
+                template="${template//'{{testingLine}}'/$testingLine}"
+                template="${template//'{{linkedin}}'/$linkedin}"
+                template="${template//'{{email}}'/$email}"
+                template="${template//'{{aboutMeLine}}'/$aboutMeLine}"
+
+                printf '%s\n' "$template" > README.md
+
+                echo "README.md generated via bash + jq"
