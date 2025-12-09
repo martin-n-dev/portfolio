@@ -100,22 +100,14 @@ jobs:
               with:
                 name: generated-readme
                 path: README.md
-            - name: Commit README.md if changed
+            - name: Commit README.md (always commit)
               run: |
-                # Sanity check: generator should have created the file
                 if [ ! -f README.md ]; then
                     echo "ERROR: README.md not found after generation."
                     exit 1
                 fi
-
-                # Compare README.md in HEAD vs working tree (handles new + changed)
-                if git diff --quiet HEAD -- README.md; then
-                    echo "README.md unchanged, nothing to commit."
-                    exit 0
-                fi
-
                 git config user.name "github-actions[bot]"
                 git config user.email "github-actions[bot]@users.noreply.github.com"
                 git add README.md
-                git commit -m "chore: regenerate README from data.json"
+                git commit --allow-empty -m "chore: regenerate README from data.json"
                 git push
