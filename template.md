@@ -6,7 +6,7 @@
 ### What I work with professionally 💼
 
 - 🧾 **Programming & scripting languages:** {{languagesLine}}
-- 🧩 **Platforms & frameworks:** {{platformsLine}}; {{frameworksLine}}
+- 🧩 **Platforms & frameworks:** {{platformsLine}}, {{frameworksLine}}
 - 📐 **API design & specifications:** {{apisLine}}
 - 💻 **Environments:** {{envLine}}
 - 🛠️ **Tooling & workflows:** {{toolingLine}}

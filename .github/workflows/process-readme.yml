@@ -44,7 +44,7 @@ jobs:
                         (.schemas | select(length > 0) | join(", "))
                     ]
                     | map(select(length > 0))
-                    | join("; ")
+                    | join(", ")
                 ' data.json)
 
                 envLine=$(jq -r '
